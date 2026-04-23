@@ -73,7 +73,7 @@ function ShoppingList() {
             onChange={e => setHasReminders({ ...hasReminders, bottles: e.target.checked })}
           />
           <span className="reminder-icon">🍾</span>
-          <span className="reminder-text">Pantkvitto</span>
+          <span className="reminder-text">Pantkvitton</span>
         </label>
       </div>
 
@@ -94,12 +94,33 @@ function ShoppingList() {
             {sectionItems
               .sort((a, b) => a.done - b.done)
               .map(item => (
-                <div
-                  key={item.id}
-                  onClick={() => toggleItem(item.id)}
-                  className={`shopping-item ${item.done ? 'done' : ''}`}
-                >
-                  {item.done ? '✅ ' : '⚪ '} {item.name}
+                <div key={item.id} className="shopping-item-container">
+                  <div
+                    onClick={() => toggleItem(item.id)}
+                    className={`shopping-item ${item.done ? 'done' : ''}`}
+                  >
+                    {item.done ? '✅ ' : '⚪ '} {item.name}
+                  </div>
+
+                  <div className="item-actions">
+                    <button
+                      onClick={() => {
+                        const newName = prompt("Ändra namn:", item.name);
+                        if (newName) updateItem(item.id, newName);
+                      }}
+                      className="btn-edit"
+                    >
+                      ✏️
+                    </button>
+                    <button
+                      onClick={() => {
+                        if (window.confirm("Vill du radera varan?")) removeItem(item.id);
+                      }}
+                      className="btn-delete"
+                    >
+                      🗑️
+                    </button>
+                  </div>
                 </div>
               ))}
           </div>
