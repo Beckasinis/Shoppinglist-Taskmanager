@@ -41,12 +41,29 @@ export const ShoppingProvider = ({ children }) => {
 
   const moveSection = (id, direction) => {
     setSections(prev => {
-      const index = prev.findIndex(s => s.id === id);
-      if (index === -1) return prev;
-      const newIndex = direction === 'up' ? index - 1 : index + 1;
-      if (newIndex < 0 || newIndex >= prev.length) return prev;
+      const visibleSectionIds = prev
+        .filter(s => items.some(item => item.sectionId === s.id))
+        .map(s => s.id);
+
+      const currentIndex = visibleSectionIds.indexOf(id);
+      if (currentIndex === -1) return prev;
+
+      // 2. Räkna ut målet (indexet i den synliga listan)
+      const targetIndex = direction === 'up' ? currentIndex - 1 : currentIndex + 1;
+
+      // Om vi försöker gå utanför de synliga gränserna, gör inget
+      if (targetIndex < 0 || targetIndex >= visibleSectionIds.length) return prev;
+
+      const targetId = visibleSectionIds[targetIndex];
+
+      // 3. Hitta de faktiska positionerna i den stora huvudlistan
+      const realCurrentIndex = prev.findIndex(s => s.id === id);
+      const realTargetIndex = prev.findIndex(s => s.id === targetId);
+
+      // 4. Byt plats på dem i huvudlistan
       const next = [...prev];
-      [next[index], next[newIndex]] = [next[newIndex], next[index]];
+      [next[realCurrentIndex], next[realTargetIndex]] = [next[realTargetIndex], next[realCurrentIndex]];
+
       return next;
     });
   };
