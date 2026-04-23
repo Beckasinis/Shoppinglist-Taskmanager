@@ -1,0 +1,139 @@
+.shopping-container {
+  padding-bottom: 80px;
+  /* För att kassa-knappen inte ska täcka innehåll */
+  max-width: 500px;
+  width: 95%;
+  margin: 1rem auto;
+  padding: 0 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sort-buttons button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px 6px;
+  margin-left: 4px;
+}
+
+.btn-category {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #4a5568;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-category.active {
+  background: linear-gradient(135deg, #073069, #2ab2e3);
+  color: white;
+  border: none;
+}
+
+.reminder-section {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.reminder-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.reminder-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  border: 6px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.reminder-card.active {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: #48bb78;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+}
+
+.reminder-icon {
+  font-size: 2.5rem;
+  /* Stora ikoner */
+  margin-bottom: 0.5rem;
+}
+
+.reminder-text {
+  font-weight: bold;
+  color: #2d3748;
+}
+
+/* Dölj den fula standard-checkboxen */
+.reminder-card input[type="checkbox"] {
+  display: none;
+}
+
+.shopping-item {
+  padding: 8px 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.shopping-item:last-child {
+  border-bottom: none;
+}
+
+.shopping-item.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.shopping-section h3 {
+  margin-bottom: 0.5rem;
+  color: #073069;
+  font-size: 1.1rem;
+}
+
+.btn-checkout {
+  position: sticky;
+  bottom: 20px;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #276749, #48bb78);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}

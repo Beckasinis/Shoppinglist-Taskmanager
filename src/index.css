@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0eafc, #073069);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+/* Navigation */
+nav {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #667eea;
+}
+
+/* Huvudcontainer */
+.container {
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  width: 95%;
+  /* Tar upp nästan hela bredden på mobil */
+  max-width: 500px;
+  /* Begränsar bredden på dator */
+  margin: 0 auto;
+  /* Centrerar listan på sidan */
+  padding: 1rem;
+}
+
+/* Glasskort */
+.glass-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.glass-card.done {
+  opacity: 0.6;
+}
+
+.glass-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  text-decoration: none;
+}
+
+.glass-card.done h3 {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.glass-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Formulär */
+.form-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+/* Knappar */
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-right: 0.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #073069, #2ab2e3);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-success {
+  background: rgba(72, 187, 120, 0.2);
+  color: #276749;
+  border: 1px solid rgba(72, 187, 120, 0.4);
+}
+
+.btn-success:hover {
+  background: rgba(72, 187, 120, 0.35);
+}
+
+.btn-danger {
+  background: rgba(245, 101, 101, 0.2);
+  color: #9b2c2c;
+  border: 1px solid rgba(245, 101, 101, 0.4);
+}
+
+.btn-danger:hover {
+  background: rgba(245, 101, 101, 0.35);
+}
+
+.btn-secondary {
+  background: rgba(160, 174, 192, 0.2);
+  color: #4a5568;
+  border: 1px solid rgba(160, 174, 192, 0.4);
+}
+
+.btn-secondary:hover {
+  background: rgba(160, 174, 192, 0.35);
+}
+
+/* Filterknappar */
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-filter {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #4a5568;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-filter:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.btn-filter.active {
+  background: linear-gradient(135deg, #073069, #2ab2e3);
+  color: white;
+  border: none;
+}
+
+/* Felmeddelande */
+.error {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Tomt state */
+.empty {
+  text-align: center;
+  color: #888;
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+.shopping-container {
+  padding-bottom: 80px;
+  /* För att kassa-knappen inte ska täcka innehåll */
+  max-width: 500px;
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* För skärmar större än 600px */
+@media (min-width: 600px) {
+  .todo-container {
+    padding: 2rem;
+    font-size: 1.2rem;
+    /* Större text på datorn */
+  }
+}
