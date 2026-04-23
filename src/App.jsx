@@ -7,7 +7,7 @@ function App() {
   return (
     <HashRouter>
       <nav>
-        <Link to="/">Inköpslista</Link>
+        <Link to="/">Shoppinglista</Link>
         {' | '}
         <Link to="/task">Task-Manager</Link>
         {' | '}

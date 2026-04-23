@@ -39,7 +39,7 @@ function ShoppingList() {
 
   return (
     <div className="shopping-container">
-      <h2>Inköpslista</h2>
+      <h2>Shoppinglista</h2>
 
       {/* Kategori-knappar */}
       <div className="category-chips">
