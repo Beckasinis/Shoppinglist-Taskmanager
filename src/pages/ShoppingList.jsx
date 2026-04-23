@@ -16,6 +16,10 @@ function ShoppingList() {
     updateItem
   } = useShopping();
 
+  const visibleSections = sections.filter(section =>
+    items.some(item => item.sectionId === section.id)
+  );
+
   const [newItemName, setNewItemName] = useState('');
   const [selectedSection, setSelectedSection] = useState(sections[0]?.id || '');
 
@@ -88,8 +92,7 @@ function ShoppingList() {
         </label>
       </div>
 
-      {/* Listan grupperad per sektion */}
-      {sections.map((section, index) => {
+      {visibleSections.map((section, index) => {
         const sectionItems = items.filter(i => i.sectionId === section.id);
         if (sectionItems.length === 0) return null;
 

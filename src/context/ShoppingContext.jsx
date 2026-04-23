@@ -40,8 +40,9 @@ export const ShoppingProvider = ({ children }) => {
   };
 
   const moveSection = (id, direction) => {
-    setSections(prev => {
-      const visibleSectionIds = prev
+    setSections(prevSections => {
+      // 1. Skapa en lista av bara de synliga sektionerna (de som har items)
+      const visibleSectionIds = prevSections
         .filter(s => items.some(item => item.sectionId === s.id))
         .map(s => s.id);
 
@@ -52,7 +53,7 @@ export const ShoppingProvider = ({ children }) => {
       const targetIndex = direction === 'up' ? currentIndex - 1 : currentIndex + 1;
 
       // Om vi försöker gå utanför de synliga gränserna, gör inget
-      if (targetIndex < 0 || targetIndex >= visibleSectionIds.length) return prev;
+      if (targetIndex < 0 || targetIndex >= visibleSectionIds.length) return prevSections;
 
       const targetId = visibleSectionIds[targetIndex];
 
@@ -61,7 +62,7 @@ export const ShoppingProvider = ({ children }) => {
       const realTargetIndex = prev.findIndex(s => s.id === targetId);
 
       // 4. Byt plats på dem i huvudlistan
-      const next = [...prev];
+      const next = [...prevSections];
       [next[realCurrentIndex], next[realTargetIndex]] = [next[realTargetIndex], next[realCurrentIndex]];
 
       return next;
