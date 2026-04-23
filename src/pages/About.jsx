@@ -1,13 +1,9 @@
 function About() {
   return (
     <div className="container">
-      <h2>Om Task Manager</h2>
+      <h2>Om appen</h2>
       <div className="glass-card">
-        <p>Shoppinglistan och Taskmanagern är båda byggda med React som ett inlärningsprojekt. Den använder useState, useEffect, useContext och React Router.</p>
-      </div>
-
-      <div className="glass-card">
-        <h2>My sisters analog Shoppinglist that gave me this idea, has been translated into a userfriendly app!</h2>
+        <h3>My sisters analog Shoppinglist that gave me this idea, has been translated into a userfriendly app!</h3>
 
         <p>This is totally a project of learning React.  I have built two different projects, a shoppinglist and a taskmanager, but I choose to keep them in the same project because I wanted to learn how to extent the maptree with all files instead of starting over again and build the start of it.</p>
 
@@ -44,7 +40,7 @@ function About() {
             <li>Städ - Cleaning</li>
             <li>Övrigt - Other</li>
           </ul>
-
+          <br />
           <p>I have put the last one called 'Other' to put things what don't match in any other section.
             The magic happenes when you can place the sections in what order you wnat, depending on what store you choose to shop in.
             And when you have put something from your list in your physical cart you push it in the app and it will be crossed out
