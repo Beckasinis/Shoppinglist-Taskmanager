@@ -20,18 +20,22 @@ store she will shop at, she can change the order of the sections so that her lis
 visit. 
 
 ### The shopping-list
-In this list you can add what you will buy and connect it to the right section. I have choosen 10 sections what should
+In this list you can add what you will buy and connect it to the right section. I have choosen 14 sections what should
 cover all what any grocerystore has. The sections are:
 
 Delikatess      - Delicacy
 Djurmat         - Food for animals
+Drycker         - Drinks
 Frukt & Grönt   - Fruit and Vegetables
 Fryst           - Frozen
-Skafferi        - Dry things
+Förbutik        - Convenience store (lottery or post)
+Hushåll         - Household
+Hygien          - Hygiene
 Kött & Chark    - Meat and Charcuteries
 Mejeri          - Dairy
-Förbutik        - Prestore for lottery or post
-Special         - Things that are not food
+None-Food       - None-Food
+Skafferi        - Dry things
+Städ            - Cleaning
 Övrigt          - Other
 
 I have put the last one called 'Other' to put things what don't match in any other section.
@@ -53,7 +57,7 @@ If you push it it marks as done and will be placed in the bottom of the list. I 
 All, Todo and Done tasks. So if you push either of them you only see what they represent. You can also search to find your
 tasks by the searchfield.
 
-I have put this onto my GitHub Pages so that I myself can use it and also my sister. Before I, in my next project course will
-make some improvements on it. As a matter of fact, I have plans to make it much more advanced then this one is. 
+I have put this onto my GitHub Pages so that I myself can use it and also my sister, and others. Before I, in my next project 
+course will make some improvements on it. As a matter of fact, I have plans to make it much more advanced then this one is. 
 
 A really great way of learning React!
