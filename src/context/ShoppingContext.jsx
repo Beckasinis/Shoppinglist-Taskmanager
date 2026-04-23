@@ -9,6 +9,8 @@ export const ShoppingProvider = ({ children }) => {
     { id: '5', name: 'Mejeri' }, { id: '6', name: 'Skafferi' },
     { id: '7', name: 'Fryst' }, { id: '8', name: 'Övrigt' },
     { id: '9', name: 'Djurmat' }, { id: '10', name: 'Förbutik' },
+    { id: '11', name: 'Drycker' }, { id: '12', name: 'Hygien' },
+    { id: '13', name: 'Städ' }, { id: '14', name: 'Hushåll' },
   ];
 
   const [sections, setSections] = useState(() => {
