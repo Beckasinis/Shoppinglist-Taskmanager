@@ -40,13 +40,18 @@ And when you have put something from your list in your physical cart you push it
 and get placed in the bottom of the section it belongs to. So that you always has the products what you still will buy in 
 the top. 
 All is sorted in alphabetic order. 
+I have also choosen to make a manual reminder if you have cupons or deposit from bottles. If you have it you push the
+button of either cupons or deposits ot both, and when you are all done in the store you push the big green button that 
+overflows and always are in the bottom of your screen. It can happen that you don't get all things from your shoppinglist
+so I choose to make it manual instead of letting the reminder come when all in the list is marked as done. 
 
 ### The task-manager 
 The task-manager was my very first thing what I made as a learning project of React. You are able to put your tasks in the 
 list with a title and a description and save them in the list. The tasks are automatically sorted in alphabetic order. 
 You can delete a task, you can edit a task, both title and description and you can toggle the tasks by 'done' and 'not done'. 
 If you push it it marks as done and will be placed in the bottom of the list. I made 3 categories to filter the tasks in. 
-All, Todo and Done tasks. So if you push either of them you only see what they represent. 
+All, Todo and Done tasks. So if you push either of them you only see what they represent. You can also search to find your
+tasks by the searchfield.
 
 I have put this onto my GitHub Pages so that I myself can use it and also my sister. Before I, in my next project course will
 make some improvements on it. As a matter of fact, I have plans to make it much more advanced then this one is. 
