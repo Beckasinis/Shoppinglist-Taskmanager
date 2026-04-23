@@ -26,7 +26,7 @@ function ShoppingList() {
   };
 
   return (
-    // Här lägger vi in klassen för responsivitet (todo-container eller shopping-container)
+    // Här läggs klassen för responsivitet in (todo-container eller shopping-container)
     <div className="shopping-container">
       <h2>Inköpslista</h2>
 

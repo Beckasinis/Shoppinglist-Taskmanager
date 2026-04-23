@@ -4,9 +4,9 @@ const ShoppingContext = createContext();
 
 export const ShoppingProvider = ({ children }) => {
   const initialSections = [
-    { id: '1', name: 'Frukt & Grönt' }, { id: '2', name: 'Special' },
+    { id: '1', name: 'Frukt & Grönt' }, { id: '2', name: 'None-Food' },
     { id: '3', name: 'Kött & Chark' }, { id: '4', name: 'Delikatess' },
-    { id: '5', name: 'Mejeri' }, { id: '6', name: 'Kolonial' },
+    { id: '5', name: 'Mejeri' }, { id: '6', name: 'Skafferi' },
     { id: '7', name: 'Fryst' }, { id: '8', name: 'Övrigt' },
     { id: '9', name: 'Djurmat' }, { id: '10', name: 'Förbutik' },
   ];

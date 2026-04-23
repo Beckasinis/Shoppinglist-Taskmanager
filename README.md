@@ -1,16 +1,54 @@
-# React + Vite
+# My sisters analog Shoppinglist has been translated into a userfriendly app!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is totally a project of learning React. I have not made any Github commits during the time of develoupment, but
+I will soon start over with this project and focus on the project, instead of learning code and make it even more 
+userfriendly because I have coime up with so many more things to implement for it to be even better. 
 
-Currently, two official plugins are available:
+In this project I made two different projects aside of eachother but I choose to keep them in the same project because 
+I wanted to learn how to extent the maptree with all files instead of starting over again and build the start of it.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+I have used React with Vite and it uses localStorage to save things.
 
-## React Compiler
+## The focus!
+My sister maybe have an odd way of shopping her groceries. Or she is like many other people, I don't know. But her 
+analog list is very systematic written. She writes everything what she will buy in order after the way the shop have 
+their things. So that she can go from top to bottom buying what she will have from her list. 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+So that's the idea of this app. I wanted to build something what would make it easy for her to implement her 
+groceries to the correct section; like 'fruit and vegetables' or 'meat and charcuterie'. And then depending on what
+store she will shop at, she can change the order of the sections so that her list always matches the store she will 
+visit. 
 
-## Expanding the ESLint configuration
+### The shopping-list
+In this list you can add what you will buy and connect it to the right section. I have choosen 10 sections what should
+cover all what any grocerystore has. The sections are:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Delikatess      - Delicacy
+Djurmat         - Food for animals
+Frukt & Grönt   - Fruit and Vegetables
+Fryst           - Frozen
+Skafferi        - Dry things
+Kött & Chark    - Meat and Charcuteries
+Mejeri          - Dairy
+Förbutik        - Prestore for lottery or post
+Special         - Things that are not food
+Övrigt          - Other
+
+I have put the last one called 'Other' to put things what don't match in any other section.
+The magic happenes when you can place the sections in what order you wnat, depending on what store you choose to shop in. 
+And when you have put something from your list in your physical cart you push it in the app and it will be crossed out 
+and get placed in the bottom of the section it belongs to. So that you always has the products what you still will buy in 
+the top. 
+All is sorted in alphabetic order. 
+
+### The task-manager 
+The task-manager was my very first thing what I made as a learning project of React. You are able to put your tasks in the 
+list with a title and a description and save them in the list. The tasks are automatically sorted in alphabetic order. 
+You can delete a task, you can edit a task, both title and description and you can toggle the tasks by 'done' and 'not done'. 
+If you push it it marks as done and will be placed in the bottom of the list. I made 3 categories to filter the tasks in. 
+All, Todo and Done tasks. So if you push either of them you only see what they represent. 
+
+I have put this onto my GitHub Pages so that I myself can use it and also my sister. Before I, in my next project course will
+make some improvements on it. As a matter of fact, I have plans to make it much more advanced then this one is. 
+
+A really great way of learning React!
