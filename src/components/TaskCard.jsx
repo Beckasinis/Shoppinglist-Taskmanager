@@ -42,15 +42,15 @@ function TaskCard({ id, title, description, done }) {
         <div className="view-mode">
           <h3>{title}</h3>
           <p>{description}</p>
-          <button className="btn btn-secondary" onClick={() => setIsEditing(true)}>Redigera</button>
+          <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+            <button className="btn btn-secondary" onClick={() => setIsEditing(true)}>Redigera</button>
+            <button className="btn btn-success" onClick={() => handleToggle(id)}>
+              {done ? 'Ångra ↩️' : 'Klar ✅'}
+            </button>
+            <button className="btn btn-danger" onClick={() => handleDelete(id)}>Ta bort</button>
+          </div>
         </div>
       )}
-
-      {/* Här anropar vi funktionerna direkt från context */}
-      <button className="btn btn-success" onClick={() => handleToggle(id)}>
-        {done ? 'Ångra ↩️' : 'Klar ✅'}
-      </button>
-      <button className="btn btn-danger" onClick={() => handleDelete(id)}>Ta bort</button>
     </div>
   )
 }

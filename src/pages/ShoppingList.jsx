@@ -98,7 +98,7 @@ function ShoppingList() {
             <div className="section-header">
               <h3>{section.name}</h3>
               <div className="sort-buttons">
-                {index !== 0 && (
+                {index > 0 && (
                   <button onClick={() => moveSection(section.id, 'up')}>⬆️</button>
                 )}
                 {index !== sections.length - 1 && (
