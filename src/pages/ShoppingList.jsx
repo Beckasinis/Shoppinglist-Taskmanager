@@ -3,7 +3,19 @@ import { useShopping } from '../context/ShoppingContext';
 import './ShoppingList.css';
 
 function ShoppingList() {
-  const { sections, items, addItem, toggleItem, moveSection, hasReminders, setHasReminders, removeItem, updateItem } = useShopping();
+  // VIKTIGT: Här lägger vi till removeItem och updateItem så de kan användas i komponenten
+  const {
+    sections,
+    items,
+    addItem,
+    toggleItem,
+    moveSection,
+    hasReminders,
+    setHasReminders,
+    removeItem,
+    updateItem
+  } = useShopping();
+
   const [newItemName, setNewItemName] = useState('');
   const [selectedSection, setSelectedSection] = useState(sections[0]?.id || '');
 
@@ -26,7 +38,6 @@ function ShoppingList() {
   };
 
   return (
-    // Här läggs klassen för responsivitet in (todo-container eller shopping-container)
     <div className="shopping-container">
       <h2>Inköpslista</h2>
 
@@ -43,7 +54,7 @@ function ShoppingList() {
         ))}
       </div>
 
-      {/* Formulär */}
+      {/* Formulär för att lägga till */}
       <form onSubmit={handleSubmit} className="form-card">
         <input
           type="text"
@@ -54,7 +65,7 @@ function ShoppingList() {
         <button type="submit" className="btn btn-primary">Lägg till</button>
       </form>
 
-      {/* Påminnelser */}
+      {/* Påminnelser (Pant/Kupong) */}
       <div className="reminder-container">
         <label className={`reminder-card ${hasReminders.coupons ? 'active' : ''}`}>
           <input
@@ -73,11 +84,11 @@ function ShoppingList() {
             onChange={e => setHasReminders({ ...hasReminders, bottles: e.target.checked })}
           />
           <span className="reminder-icon">🍾</span>
-          <span className="reminder-text">Pantkvitton</span>
+          <span className="reminder-text">Pantkvitto</span>
         </label>
       </div>
 
-      {/* Listan */}
+      {/* Listan grupperad per sektion */}
       {sections.map((section, index) => {
         const sectionItems = items.filter(i => i.sectionId === section.id);
         if (sectionItems.length === 0) return null;
@@ -91,6 +102,7 @@ function ShoppingList() {
                 {index < sections.length - 1 && <button onClick={() => moveSection(section.id, 'down')}>⬇️</button>}
               </div>
             </div>
+
             {sectionItems
               .sort((a, b) => a.done - b.done)
               .map(item => (
@@ -108,15 +120,15 @@ function ShoppingList() {
                         const newName = prompt("Ändra namn:", item.name);
                         if (newName) updateItem(item.id, newName);
                       }}
-                      className="btn-edit"
+                      title="Redigera"
                     >
                       ✏️
                     </button>
                     <button
                       onClick={() => {
-                        if (window.confirm("Vill du radera varan?")) removeItem(item.id);
+                        if (window.confirm(`Vill du radera "${item.name}"?`)) removeItem(item.id);
                       }}
-                      className="btn-delete"
+                      title="Radera"
                     >
                       🗑️
                     </button>
