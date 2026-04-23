@@ -184,7 +184,14 @@ body {
   font-size: 1.1rem;
 }
 
-/* Redigera & Radera Layout */
+.shopping-container {
+  padding-bottom: 80px;
+  /* För att kassa-knappen inte ska täcka innehåll */
+  max-width: 500px;
+  margin: 0 auto;
+  width: 95%;
+}
+
 .shopping-item-container {
   display: flex;
   justify-content: space-between;

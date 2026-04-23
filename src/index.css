@@ -223,14 +223,6 @@ input[type="text"]:focus {
   font-size: 1rem;
 }
 
-.shopping-container {
-  padding-bottom: 80px;
-  /* För att kassa-knappen inte ska täcka innehåll */
-  max-width: 500px;
-  margin: 0 auto;
-  width: 95%;
-}
-
 /* För skärmar större än 600px */
 @media (min-width: 600px) {
   .todo-container {
