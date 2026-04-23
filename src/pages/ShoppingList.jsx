@@ -3,7 +3,7 @@ import { useShopping } from '../context/ShoppingContext';
 import './ShoppingList.css';
 
 function ShoppingList() {
-  const { sections, items, addItem, toggleItem, moveSection, hasReminders, setHasReminders } = useShopping();
+  const { sections, items, addItem, toggleItem, moveSection, hasReminders, setHasReminders, removeItem, updateItem } = useShopping();
   const [newItemName, setNewItemName] = useState('');
   const [selectedSection, setSelectedSection] = useState(sections[0]?.id || '');
 
