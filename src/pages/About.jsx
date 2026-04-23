@@ -24,7 +24,7 @@ function About() {
           <p>In this list you can add what you will buy and connect it to the right section. I have choosen 14 sections what should
             cover all what any grocerystore has. The sections are:</p>
 
-          <ul>
+          <ul style={{ listStyleType: 'none' }}>
             <li>Delikatess - Delicacy</li>
             <li>Djurmat - Food for animals</li>
             <li>Drycker - Drinks</li>
