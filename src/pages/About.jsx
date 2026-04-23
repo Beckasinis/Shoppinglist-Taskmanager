@@ -25,13 +25,13 @@ function About() {
             cover all what any grocerystore has. The sections are:</p>
 
           <ul style={{ listStyleType: 'none' }}>
+            <li>Bageri - Bakery</li>
             <li>Delikatess - Delicacy</li>
             <li>Djurmat - Food for animals</li>
             <li>Drycker - Drinks</li>
             <li>Frukt & Grönt - Fruit and Vegetables</li>
             <li>Fryst - Frozen</li>
             <li>Förbutik - Convenience store (lottery or post)</li>
-            <li>Hushåll - Household</li>
             <li>Hygien - Hygiene</li>
             <li>Kött & Chark - Meat and Charcuteries</li>
             <li>Mejeri - Dairy</li>

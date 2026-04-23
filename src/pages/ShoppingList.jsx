@@ -3,7 +3,6 @@ import { useShopping } from '../context/ShoppingContext';
 import './ShoppingList.css';
 
 function ShoppingList() {
-  // VIKTIGT: Här lägger vi till removeItem och updateItem så de kan användas i komponenten
   const {
     sections,
     items,
@@ -16,12 +15,13 @@ function ShoppingList() {
     updateItem
   } = useShopping();
 
+  const [newItemName, setNewItemName] = useState('');
+  const [selectedSection, setSelectedSection] = useState(sections[0]?.id || '');
+
+  // --- BERÄKNINGAR (Viktigt att dessa ligger efter useShopping) ---
   const visibleSections = sections.filter(section =>
     items.some(item => item.sectionId === section.id)
   );
-
-  const [newItemName, setNewItemName] = useState('');
-  const [selectedSection, setSelectedSection] = useState(sections[0]?.id || '');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,7 +34,6 @@ function ShoppingList() {
     let msg = "PÅMINNELSE!\n";
     if (hasReminders.coupons) msg += "🎟️ Glöm inte kuponger!\n";
     if (hasReminders.bottles) msg += "🍾 Glöm inte pantkvitton!\n";
-
     if (!hasReminders.coupons && !hasReminders.bottles) {
       msg = "Inga särskilda påminnelser. Kör hårt! 🏁";
     }
@@ -45,7 +44,6 @@ function ShoppingList() {
     <div className="shopping-container">
       <h2>Shoppinglista</h2>
 
-      {/* Kategori-knappar */}
       <div className="category-chips">
         {[...sections].sort((a, b) => a.name.localeCompare(b.name)).map(s => (
           <button
@@ -58,7 +56,6 @@ function ShoppingList() {
         ))}
       </div>
 
-      {/* Formulär för att lägga till */}
       <form onSubmit={handleSubmit} className="form-card">
         <input
           type="text"
@@ -69,7 +66,6 @@ function ShoppingList() {
         <button type="submit" className="btn btn-primary">Lägg till</button>
       </form>
 
-      {/* Påminnelser (Pant/Kupong) */}
       <div className="reminder-container">
         <label className={`reminder-card ${hasReminders.coupons ? 'active' : ''}`}>
           <input
@@ -92,9 +88,9 @@ function ShoppingList() {
         </label>
       </div>
 
+      {/* --- HÄR RENDERAS DE SYNLIGA SEKTIONERNA --- */}
       {visibleSections.map((section, index) => {
         const sectionItems = items.filter(i => i.sectionId === section.id);
-        if (sectionItems.length === 0) return null;
 
         return (
           <div key={section.id} className="glass-card shopping-section">
@@ -102,10 +98,10 @@ function ShoppingList() {
               <h3>{section.name}</h3>
               <div className="sort-buttons">
                 {index > 0 && (
-                  <button onClick={() => moveSection(section.id, 'up')}>⬆️</button>
+                  <button type="button" onClick={() => moveSection(section.id, 'up')}>⬆️</button>
                 )}
-                {index !== sections.length - 1 && (
-                  <button onClick={() => moveSection(section.id, 'down')}>⬇️</button>
+                {index < visibleSections.length - 1 && (
+                  <button type="button" onClick={() => moveSection(section.id, 'down')}>⬇️</button>
                 )}
               </div>
             </div>
@@ -122,23 +118,13 @@ function ShoppingList() {
                   </div>
 
                   <div className="item-actions">
-                    <button
-                      onClick={() => {
-                        const newName = prompt("Ändra namn:", item.name);
-                        if (newName) updateItem(item.id, newName);
-                      }}
-                      title="Redigera"
-                    >
-                      ✏️
-                    </button>
-                    <button
-                      onClick={() => {
-                        if (window.confirm(`Vill du radera "${item.name}"?`)) removeItem(item.id);
-                      }}
-                      title="Radera"
-                    >
-                      🗑️
-                    </button>
+                    <button onClick={() => {
+                      const newName = prompt("Ändra namn:", item.name);
+                      if (newName) updateItem(item.id, newName);
+                    }}>✏️</button>
+                    <button onClick={() => {
+                      if (window.confirm(`Radera "${item.name}"?`)) removeItem(item.id);
+                    }}>🗑️</button>
                   </div>
                 </div>
               ))}

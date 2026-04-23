@@ -40,29 +40,26 @@ export const ShoppingProvider = ({ children }) => {
   };
 
   const moveSection = (id, direction) => {
-    setSections(prevSections => {
-      // 1. Skapa en lista av bara de synliga sektionerna (de som har items)
-      const visibleSectionIds = prevSections
+    setSections(prev => {
+      // 1. Hitta vilka som syns just NU
+      const visibleSectionIds = prev
         .filter(s => items.some(item => item.sectionId === s.id))
         .map(s => s.id);
 
       const currentIndex = visibleSectionIds.indexOf(id);
-      if (currentIndex === -1) return prev;
-
-      // 2. Räkna ut målet (indexet i den synliga listan)
       const targetIndex = direction === 'up' ? currentIndex - 1 : currentIndex + 1;
 
-      // Om vi försöker gå utanför de synliga gränserna, gör inget
-      if (targetIndex < 0 || targetIndex >= visibleSectionIds.length) return prevSections;
+      // 2. Om vi försöker gå utanför de synliga gränserna, gör inget
+      if (targetIndex < 0 || targetIndex >= visibleSectionIds.length) return prev;
 
       const targetId = visibleSectionIds[targetIndex];
 
-      // 3. Hitta de faktiska positionerna i den stora huvudlistan
+      // 3. Hitta deras platser i den stora listan (prev)
       const realCurrentIndex = prev.findIndex(s => s.id === id);
       const realTargetIndex = prev.findIndex(s => s.id === targetId);
 
-      // 4. Byt plats på dem i huvudlistan
-      const next = [...prevSections];
+      // 4. Byt plats
+      const next = [...prev];
       [next[realCurrentIndex], next[realTargetIndex]] = [next[realTargetIndex], next[realCurrentIndex]];
 
       return next;
