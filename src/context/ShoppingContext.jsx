@@ -10,7 +10,7 @@ export const ShoppingProvider = ({ children }) => {
     { id: '7', name: 'Fryst' }, { id: '8', name: 'Övrigt' },
     { id: '9', name: 'Djurmat' }, { id: '10', name: 'Förbutik' },
     { id: '11', name: 'Drycker' }, { id: '12', name: 'Hygien' },
-    { id: '13', name: 'Städ' }, { id: '14', name: 'Hushåll' },
+    { id: '13', name: 'Städ' }, { id: '14', name: 'Bageri' },
   ];
 
   const [sections, setSections] = useState(() => {
