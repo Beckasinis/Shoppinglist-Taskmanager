@@ -47,20 +47,23 @@ export const ShoppingProvider = ({ children }) => {
       [next[index], next[newIndex]] = [next[newIndex], next[index]];
       return next;
     });
+  };
 
-    const removeItem = (id) => {
-      setItems(items.filter(item => item.id !== id));
-    };
+  const removeItem = (id) => {
+    setItems(prev => prev.filter(item => item.id !== id));
+  };
 
-    const updateItem = (id, newName) => {
-      setItems(items.map(item =>
-        item.id === id ? { ...item, name: newName } : item
-      ));
-    };
+  const updateItem = (id, newName) => {
+    setItems(prev => prev.map(item =>
+      item.id === id ? { ...item, name: newName } : item
+    ));
   };
 
   return (
-    <ShoppingContext.Provider value={{ sections, items, addItem, toggleItem, moveSection, hasReminders, setHasReminders, removeItem, updateItem }}>
+    <ShoppingContext.Provider value={{
+      sections, items, addItem, toggleItem, moveSection,
+      hasReminders, setHasReminders, removeItem, updateItem
+    }}>
       {children}
     </ShoppingContext.Provider>
   );
