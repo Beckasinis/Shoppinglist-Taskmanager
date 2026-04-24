@@ -69,18 +69,18 @@ function About() {
             of fact, I have plans to make it much more advanced than this one is.</p>
 
           <p>A really great way of learning React!</p>
-          <div className="glass-card">
-            <h2>Den tekniska arkitekturen på svenska</h2>
-            <p>Grunden i mitt projekt vilar på Vite, en modern byggverktygskedja som ger en extremt snabb utvecklingsmiljö och en effektiv optimering av slutprodukten. Ovanpå detta har jag byggt applikationen med React, där man utnyttjar ett komponentbaserat tänkande för att dela upp gränssnittet i logiska och återanvändbara delar, såsom inköpslistan, kategorichips och inmatningsfält.</p>
+        </div>
+        <div className="glass-card">
+          <h2>Den tekniska arkitekturen på svenska</h2>
+          <p>Grunden i mitt projekt vilar på Vite, en modern byggverktygskedja som ger en extremt snabb utvecklingsmiljö och en effektiv optimering av slutprodukten. Ovanpå detta har jag byggt applikationen med React, där man utnyttjar ett komponentbaserat tänkande för att dela upp gränssnittet i logiska och återanvändbara delar, såsom inköpslistan, kategorichips och inmatningsfält.</p>
 
-            <p>För att hantera appens "hjärna" och undvika krånglig dataöverföring mellan komponenter, har jag implementerat en centraliserad statshantering via React Context API. Detta fungerar som ett globalt minne där information om varor, kategoriernas ordning och påminnelser lagras. Genom att kombinera detta med Hooks (som useState och useEffect) skapas en reaktiv upplevelse; så fort användaren lägger till en vara eller flyttar en kategori, slår ändringen igenom omedelbart i hela applikationen och sparas dessutom permanent i webbläsarens LocalStorage.</p>
+          <p>För att hantera appens "hjärna" och undvika krånglig dataöverföring mellan komponenter, har jag implementerat en centraliserad statshantering via React Context API. Detta fungerar som ett globalt minne där information om varor, kategoriernas ordning och påminnelser lagras. Genom att kombinera detta med Hooks (som useState och useEffect) skapas en reaktiv upplevelse; så fort användaren lägger till en vara eller flyttar en kategori, slår ändringen igenom omedelbart i hela applikationen och sparas dessutom permanent i webbläsarens LocalStorage.</p>
 
-            <p>Det som gör applikationen unik är hur skillnaden mellan rådata och användarens vy hanteras. Istället för att visa en statisk lista över alla 14 fördefinierade kategorier, används en dynamisk rendering. Genom att filtrera kategorilistan i realtid visas endast de sektioner som faktiskt innehåller varor. Detta skapar en ren och fokuserad användarupplevelse, men ställer höga krav på sorteringslogiken.</p>
+          <p>Det som gör applikationen unik är hur skillnaden mellan rådata och användarens vy hanteras. Istället för att visa en statisk lista över alla 14 fördefinierade kategorier, används en dynamisk rendering. Genom att filtrera kategorilistan i realtid visas endast de sektioner som faktiskt innehåller varor. Detta skapar en ren och fokuserad användarupplevelse, men ställer höga krav på sorteringslogiken.</p>
 
-            <p>Den specialbyggda sorteringsfunktion är hjärtat i detta system. När en användare klickar på en pil, beräknar appen kategorins visuella index snarare än dess fasta plats i databasen. Funktionen identifierar nästa synliga granne och byter plats med den i bakgrunden, vilket gör att kategorierna "hoppar" över dolda tomrum på ett sömlöst sätt. För att säkerställa att detta inte skapar ett hoppigt gränssnitt, har layouten stabiliserats med modern CSS (Flexbox) och fasta bredder, vilket garanterar att knappar och rubriker ligger kvar i en perfekt linje oavsett hur listan sorteras om.</p>
+          <p>Den specialbyggda sorteringsfunktion är hjärtat i detta system. När en användare klickar på en pil, beräknar appen kategorins visuella index snarare än dess fasta plats i databasen. Funktionen identifierar nästa synliga granne och byter plats med den i bakgrunden, vilket gör att kategorierna "hoppar" över dolda tomrum på ett sömlöst sätt. För att säkerställa att detta inte skapar ett hoppigt gränssnitt, har layouten stabiliserats med modern CSS (Flexbox) och fasta bredder, vilket garanterar att knappar och rubriker ligger kvar i en perfekt linje oavsett hur listan sorteras om.</p>
 
-            <p>Slutresultatet är en tekniskt avancerad lösning gömd bakom ett enkelt och intuitivt yttre. En robust arkitektur byggd för att underlätta vardagen för användaren.</p>
-          </div>
+          <p>Slutresultatet är en tekniskt avancerad lösning gömd bakom ett enkelt och intuitivt yttre. En robust arkitektur byggd för att underlätta vardagen för användaren.</p>
         </div>
       </div>
     </div >
